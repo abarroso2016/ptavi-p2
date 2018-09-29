@@ -35,8 +35,11 @@ if __name__ == "__main__":
     elif sys.argv[2] == "multiplica":
         result = calc.multiplicar(operando1,operando2)
     elif sys.argv[2] == "divide":
-        result = calc.dividir(operando1,operando2)
+        try:
+            result = calc.dividir(operando1,operando2)
+        except ZeroDivisionError:
+            sys.exit("Division by zero is not allowed")
     else:
-        sys.exit('Operación sólo puede ser sumar o restar.')
+        sys.exit('Operación sólo puede ser sumar,restar,multiplicar o dividir.')
 
     print(result)
