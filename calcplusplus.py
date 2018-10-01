@@ -14,20 +14,19 @@ if __name__ == "__main__":
         reader = csv.reader(File)
         for row in reader:
             word_Position = 0
+
             if row[0] == "suma":
-                plus = 0
-                for word in row:
-                    if word_Position != 0:
-                        plus = calc.suma(plus, int(row[word_Position]))
-                    word_Position += 1
-                print(plus)
+                result = calc.suma(int(row[1]), int(row[2]))
+                for word in row[3:]:
+                    result = calc.suma(result, int(word))
+                print(result)
+
             elif row[0] == "resta":
-                minum = int(row[1])*2
-                for word in row:
-                    if word_Position != 0:
-                        minum = calc.resta(minum, int(row[word_Position]))
-                    word_Position += 1
-                print(minum)
+                result = calc.resta(int(row[1]), int(row[2]))
+                for word in row[3:]:
+                    result = calc.resta(result, int(word))
+                print(result)
+
             elif row[0] == "multiplica":
                 mult = 1
                 for word in row:
