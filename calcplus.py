@@ -47,6 +47,7 @@ if __name__ == "__main__":
                    elif j == 1:
                        div=calc.suma(div,int(row[1]))
                    j=j+1
+    File.close()
 print(plus)
 print(minum)
 print(multiply)
