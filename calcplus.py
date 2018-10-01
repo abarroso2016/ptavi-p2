@@ -14,40 +14,40 @@ if __name__ == "__main__":
         for row in reader:
             if row[0] == "suma":
                 plus = 0
-                j = 0
-                for i in row:
-                    if j != 0:
-                        plus = calc.suma(plus, int(row[j]))
-                    j = j+1
+                word_Position = 0
+                for word in row:
+                    if word_Position != 0:
+                        plus = calc.suma(plus, int(row[word_Position]))
+                    word_Position = word_Position+1
             elif row[0] == "resta":
                 minum = 0
-                j = 0
-                for i in row:
-                    if j != 0 and j != 1:
-                        minum = calc.resta(minum, int(row[j]))
-                    elif j == 1:
+                word_Position = 0
+                for word in row:
+                    if word_Position != 0 and word_Position != 1:
+                        minum = calc.resta(minum, int(row[word_Position]))
+                    elif word_Position == 1:
                         minum = calc.suma(minum, int(row[1]))
-                    j = j+1
+                    word_Position = word_Position+1
             elif row[0] == "multiplica":
-                multiply = 1
-                j = 0
-                for i in row:
-                    if j != 0:
-                        multiply = calc.multiplicar(multiply, int(row[j]))
-                    j = j+1
+                mult = 1
+                word_Position = 0
+                for word in row:
+                    if word_Position != 0:
+                        mult = calc.multiplicar(mult, int(row[word_Position]))
+                    word_Position = word_Position+1
             elif row[0] == "divide":
                 div = 0
-                j = 0
-                for i in row:
-                    if j != 0 and j != 1:
+                word_Position = 0
+                for word in row:
+                    if word_Position != 0 and word_Position != 1:
                         try:
-                            div = calc.dividir(div, int(row[j]))
+                            div = calc.dividir(div, int(row[word_Position]))
                         except ZeroDivisionError:
                             sys.exit("Division by zero is not allowed")
-                    elif j == 1:
+                    elif word_Position == 1:
                         div = calc.suma(div, int(row[1]))
-                    j = j+1
+                    word_Position = word_Position+1
 print(plus)
 print(minum)
-print(multiply)
+print(mult)
 print(div)
