@@ -39,7 +39,7 @@ if __name__ == "__main__":
         try:
             result = calc.dividir(operando1, operando2)
         except ZeroDivisionError:
-            sys.exit("Division by zero is not allowed")
+            print("Division by zero is not allowed")
     else:
         sys.exit('Operación sólo puede ser sumar,restar,multiplicar o dividir')
 
