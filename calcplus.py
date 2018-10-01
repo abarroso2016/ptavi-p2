@@ -9,7 +9,7 @@ from calcoohija import CalculadoraHija
 calc = CalculadoraHija()
 
 if __name__ == "__main__":
-    with open('example.csv', newline='') as File:  
+    with open('fichero.csv', newline='') as File:  
         reader = csv.reader(File)
         for row in reader:
            if row[0] == "suma":
@@ -29,13 +29,11 @@ if __name__ == "__main__":
                        minum=calc.suma(minum,int(row[1]))
                    j=j+1
            elif row[0] == "multiplica":
-               multiply=0
+               multiply=1
                j=0
                for i in row:
-                   if j != 0 and j != 1:
+                   if j != 0:
                        multiply=calc.multiplicar(multiply,int(row[j]))
-                   elif j == 1:
-                       multiply=calc.suma(multiply,int(row[1]))
                    j=j+1
            elif row[0] == "divide":
                div=0
